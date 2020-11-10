@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             _buildStep(width, "한 문장씩 입력해 주세요."),
             _buildStep(width, "친절하게 대답해주세요! 아직 모자라요"),
-            _buildStep(width, "세번째 체크박스"),
+            _buildStep(width, "전 영어를 더 잘해요! 한국어는 구글이 도와주고있어요."),
             Padding(
               padding: EdgeInsets.only(bottom: width * 0.048),
             ),
