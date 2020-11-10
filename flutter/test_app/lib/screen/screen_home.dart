@@ -49,12 +49,61 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Padding(
               padding: EdgeInsets.all(width * 0.048),
-
-              //This area is for function
             ),
+            _buildStep(width, "한 문장씩 입력해 주세요."),
+            _buildStep(width, "친절하게 대답해주세요! 아직 모자라요"),
+            _buildStep(width, "세번째 체크박스"),
+            Padding(
+              padding: EdgeInsets.only(bottom: width * 0.048),
+            ),
+            Container(
+              // 버튼 만들기 raisedbutton, button theme
+              padding: EdgeInsets.only(bottom: width * 0.036),
+              child: Center(
+                child: ButtonTheme(
+                  minWidth: width * 0.08,
+                  height: height * 0.05,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: RaisedButton(
+                    child: Text(
+                      '지금 챗봇 하기',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    color: Colors.deepPurple,
+                    onPressed: () {},
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
     );
   }
+}
+
+Widget _buildStep(double width, String title) {
+  return Container(
+    padding: EdgeInsets.fromLTRB(
+      width * 0.048,
+      width * 0.024,
+      width * 0.048,
+      width * 0.024,
+    ),
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Icon(
+          Icons.check_box,
+          size: width * 0.04,
+        ),
+        Padding(
+          padding: EdgeInsets.only(right: width * 0.024),
+        ),
+        Text(title)
+      ],
+    ),
+  );
 }
