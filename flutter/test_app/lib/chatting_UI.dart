@@ -168,6 +168,9 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     });
     // 위젯의 애니메이션 효과 발생
     message.animationController.forward();
+
+    // configuration
+    print(text);
   }
 
   @override

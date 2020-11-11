@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/model/model_quiz.dart';
+import 'package:test_app/screen/screen_quiz.dart';
+import 'package:test_app/chatting_UI.dart';
 // header file을 가져오는 느낌, lib
 
 class HomeScreen extends StatefulWidget {
@@ -9,6 +12,24 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<Quiz> quizs = [
+    Quiz.formMap({
+      'titel': 'test',
+      'candidates': ['a', 'b', 'c', 'd'],
+      'answer': 0
+    }),
+    Quiz.formMap({
+      'titel': 'test',
+      'candidates': ['a', 'b', 'c', 'd'],
+      'answer': 0
+    }),
+    Quiz.formMap({
+      'titel': 'test',
+      'candidates': ['a', 'b', 'c', 'd'],
+      'answer': 0
+    }),
+  ];
+
   @override // getter setter method 가져옴
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
@@ -72,7 +93,20 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: TextStyle(color: Colors.white),
                     ),
                     color: Colors.deepPurple,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FriendlychatApp()
+                          //flutter_swiper, 옆으로 넘기기 위한 package, pubspec.yaml
+                          /*QuizScreen(
+                            quizs: quizs,
+                          )
+                          */
+                          ,
+                        ),
+                      );
+                    },
                   ),
                 ),
               ),
